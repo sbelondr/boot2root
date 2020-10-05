@@ -1,0 +1,116 @@
+DirBuster 0.12 - Report
+http://www.owasp.org/index.php/Category:OWASP_DirBuster_Project
+Report produced on Mon Oct 05 06:25:50 CEST 2020
+--------------------------------
+
+https://192.168.1.47:443
+--------------------------------
+Directories found during testing:
+
+Dirs found with a 403 response:
+
+/cgi-bin/
+/icons/
+/phpmyadmin/themes/
+/phpmyadmin/themes/pmahomme/
+/phpmyadmin/themes/pmahomme/img/
+/phpmyadmin/js/
+/phpmyadmin/js/jquery/
+
+Dirs found with a 302 response:
+
+/webmail/
+
+Dirs found with a 200 response:
+
+/forum/
+/forum/themes/
+/forum/themes/default/
+/forum/themes/default/images/
+/forum/js/
+/forum/themes/default/subtemplates/
+/phpmyadmin/
+
+Dirs found with a 401 response:
+
+/phpmyadmin/setup/
+
+
+--------------------------------
+Files found during testing:
+
+Files found with a 200 responce:
+
+/forum/js/main.min.js
+/forum/js/admin.js
+/forum/js/admin.min.js
+/forum/js/main.js
+/forum/themes/default/insert_flash.tpl
+/forum/themes/default/avatar.tpl
+/forum/themes/default/js_config.ini
+/forum/themes/default/ajax_preview.tpl
+/forum/js/posting.min.js
+/forum/js/posting.js
+/forum/themes/default/rss.tpl
+/forum/themes/default/main.tpl
+/forum/themes/default/style.min.css
+/forum/themes/default/upload_image.tpl
+/forum/themes/default/style.css
+/forum/themes/default/subtemplates/contact.inc.tpl
+/forum/themes/default/subtemplates/errors.inc.tpl
+/forum/themes/default/subtemplates/index.inc.tpl
+/forum/themes/default/subtemplates/entry.inc.tpl
+/forum/themes/default/subtemplates/admin.inc.tpl
+/forum/themes/default/subtemplates/index_table.inc.tpl
+/forum/themes/default/subtemplates/info.inc.tpl
+/forum/themes/default/subtemplates/login.inc.tpl
+/forum/themes/default/subtemplates/login_pw_forgotten.inc.tpl
+/forum/themes/default/subtemplates/page.inc.tpl
+/forum/themes/default/subtemplates/posting.inc.tpl
+/forum/themes/default/subtemplates/posting_delete.inc.tpl
+/forum/themes/default/subtemplates/posting_delete_marked.inc.tpl
+/forum/themes/default/subtemplates/posting_delete_spam.inc.tpl
+/forum/themes/default/subtemplates/posting_flag_ham.inc.tpl
+/forum/themes/default/subtemplates/posting_manage_postings.inc.tpl
+/forum/themes/default/subtemplates/posting_move.inc.tpl
+/forum/themes/default/subtemplates/posting_report_spam.inc.tpl
+/phpmyadmin/url.php
+/forum/themes/default/subtemplates/register.inc.tpl
+/phpmyadmin/Documentation.html
+/forum/themes/default/subtemplates/search.inc.tpl
+/forum/themes/default/subtemplates/subnavigation_1.inc.tpl
+/forum/themes/default/subtemplates/subnavigation_2.inc.tpl
+/phpmyadmin/index.php
+/forum/themes/default/subtemplates/thread.inc.tpl
+/forum/themes/default/subtemplates/thread_linear.inc.tpl
+/phpmyadmin/js/cross_framing_protection.js
+/forum/themes/default/subtemplates/user.inc.tpl
+/phpmyadmin/js/jquery/jquery-1.4.4.js
+/forum/themes/default/subtemplates/user_edit.inc.tpl
+/phpmyadmin/js/update-location.js
+/forum/themes/default/subtemplates/user_edit_email.inc.tpl
+/phpmyadmin/js/functions.js
+/forum/themes/default/subtemplates/user_edit_pw.inc.tpl
+/phpmyadmin/js/jquery/jquery.qtip-1.0.0.min.js
+/forum/themes/default/subtemplates/user_postings.inc.tpl
+/forum/themes/default/subtemplates/user_profile.inc.tpl
+/phpmyadmin/js/messages.php
+/phpmyadmin/changelog.php
+/phpmyadmin/license.php
+/forum/index.php
+
+
+--------------------------------
+Errors encountered during testing:
+
+/0072132604/:IOException connect timed out
+/aggregation/:IOException connect timed out
+/7663/:IOException connect timed out
+/d/:IOException Remote host terminated the handshake
+/EWbutton_GuestBook/:IOException Remote host terminated the handshake
+/strona_20/:IOException Remote host terminated the handshake
+/scripts/:IOException Remote host terminated the handshake
+/strona_19/:IOException Remote host terminated the handshake
+/hrule/:IOException connect timed out
+/001936/:IOException connect timed out
+

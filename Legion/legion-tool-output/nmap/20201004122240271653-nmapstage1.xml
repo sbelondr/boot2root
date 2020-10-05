@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Sun Oct  4 12:22:41 2020 as: /usr/bin/nmap -T4 -sV -sSU -p T:80,81,443,4443,8080,8081,8082 -oA /root/.local/share/legion/tmp/legion-bm29bd5p-running/nmap/20201004122240271653-nmapstage1 192.168.1.47 -->
+<nmaprun scanner="nmap" args="/usr/bin/nmap -T4 -sV -sSU -p T:80,81,443,4443,8080,8081,8082 -oA /root/.local/share/legion/tmp/legion-bm29bd5p-running/nmap/20201004122240271653-nmapstage1 192.168.1.47" start="1601806961" startstr="Sun Oct  4 12:22:41 2020" version="7.80" xmloutputversion="1.04">
+<scaninfo type="syn" protocol="tcp" numservices="7" services="80-81,443,4443,8080-8082"/>
+<scaninfo type="udp" protocol="udp" numservices="0" services=""/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1601806961" endtime="1601806974"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="192.168.1.47" addrtype="ipv4"/>
+<address addr="08:00:27:37:54:C2" addrtype="mac" vendor="Oracle VirtualBox virtual NIC"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Apache httpd" version="2.2.22" extrainfo="(Ubuntu)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.2.22</cpe></service></port>
+<port protocol="tcp" portid="81"><state state="closed" reason="reset" reason_ttl="64"/><service name="hosts2-ns" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Apache httpd" version="2.2.22" hostname="127.0.1.1" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.2.22</cpe></service></port>
+<port protocol="tcp" portid="4443"><state state="closed" reason="reset" reason_ttl="64"/><service name="pharos" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8080"><state state="closed" reason="reset" reason_ttl="64"/><service name="http-proxy" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8081"><state state="closed" reason="reset" reason_ttl="64"/><service name="blackice-icecap" method="table" conf="3"/></port>
+<port protocol="tcp" portid="8082"><state state="closed" reason="reset" reason_ttl="64"/><service name="blackice-alerts" method="table" conf="3"/></port>
+</ports>
+<times srtt="7530" rttvar="11087" to="100000"/>
+</host>
+<runstats><finished time="1601806974" timestr="Sun Oct  4 12:22:54 2020" elapsed="13.32" summary="Nmap done at Sun Oct  4 12:22:54 2020; 1 IP address (1 host up) scanned in 13.32 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,20 @@
+# Nmap 7.80 scan initiated Sun Oct  4 12:23:21 2020 as: /usr/bin/nmap -T4 -sV -n -sSU -p T:23,21,22,110,111,2049,3389,8080,U:500,5060 -oA /root/.local/share/legion/tmp/legion-bm29bd5p-running/nmap/20201004122321650270-nmapstage4 192.168.1.47
+Nmap scan report for 192.168.1.47
+Host is up (0.00092s latency).
+
+PORT     STATE  SERVICE       VERSION
+21/tcp   open   ftp           vsftpd 2.0.8 or later
+22/tcp   open   ssh           OpenSSH 5.9p1 Debian 5ubuntu1.7 (Ubuntu Linux; protocol 2.0)
+23/tcp   closed telnet
+110/tcp  closed pop3
+111/tcp  closed rpcbind
+2049/tcp closed nfs
+3389/tcp closed ms-wbt-server
+8080/tcp closed http-proxy
+500/udp  closed isakmp
+5060/udp closed sip
+MAC Address: 08:00:27:37:54:C2 (Oracle VirtualBox virtual NIC)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Oct  4 12:23:33 2020 -- 1 IP address (1 host up) scanned in 11.85 seconds

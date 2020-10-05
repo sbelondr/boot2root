@@ -1,0 +1,4 @@
+# Nmap 7.80 scan initiated Sun Oct  4 12:23:36 2020 as: /usr/bin/nmap -T4 -sV -n -sSU -p T:0-20,24,26-79,81-109,112-134,136,138,140-442,444,446-1432,1434-2048,2050-3305,3307-3388,3390-5431,5433-8079,8081-29999 -oA /root/.local/share/legion/tmp/legion-bm29bd5p-running/nmap/20201004122335789443-nmapstage5 192.168.1.47
+Host: 192.168.1.47 ()	Status: Up
+Host: 192.168.1.47 ()	Ports: 143/open/tcp//imap//Dovecot imapd/, 993/open/tcp//ssl|imaps?///	Ignored State: closed (29980)
+# Nmap done at Sun Oct  4 12:23:52 2020 -- 1 IP address (1 host up) scanned in 15.40 seconds

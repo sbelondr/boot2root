@@ -1,0 +1,4 @@
+# Nmap 7.80 scan initiated Sun Oct  4 12:22:56 2020 as: /usr/bin/nmap -T4 -sV -n -sSU -O -p T:25,135,137,139,445,1433,3306,5432,U:137,161,162,1434 -oA /root/.local/share/legion/tmp/legion-bm29bd5p-running/nmap/20201004122255613860-nmapstage2 192.168.1.47
+Host: 192.168.1.47 ()	Status: Up
+Host: 192.168.1.47 ()	Ports: 25/closed/tcp//smtp///, 135/closed/tcp//msrpc///, 137/closed/tcp//netbios-ns///, 139/closed/tcp//netbios-ssn///, 445/closed/tcp//microsoft-ds///, 1433/closed/tcp//ms-sql-s///, 3306/closed/tcp//mysql///, 5432/closed/tcp//postgresql///, 137/closed/udp//netbios-ns///, 161/closed/udp//snmp///, 162/closed/udp//snmptrap///, 1434/closed/udp//ms-sql-m///
+# Nmap done at Sun Oct  4 12:22:59 2020 -- 1 IP address (1 host up) scanned in 2.50 seconds
