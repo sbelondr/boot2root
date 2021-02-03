@@ -164,9 +164,22 @@ Le readme nous donne le defi de trouver le mot de passe de thor
 On voit en utilisant `nm` que le programme appel system et getenv. Il utilise aussi les sockets
 
 
+On utilise gdb sur bomb pour pouvoir le dessassembler
+`gdb ./bomb`
+`disassemble main`
 
+on voit que le programme separe les phase: phase_{1..6}
 
+dans les phase il verifie dans un if que ce que rentre l'utilisateur correspond a une variable.
 
+Il nous suffit donc de lire cette variable avec: `x`
+
+phase_1: `Public speaking is very easy.`
+phase_2: ``
+phase_3: ``
+phase_4: ``
+phase_5: ``
+phase_6: ``
 
 
 
