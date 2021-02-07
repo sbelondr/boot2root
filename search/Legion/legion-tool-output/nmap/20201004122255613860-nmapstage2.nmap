@@ -1,0 +1,23 @@
+# Nmap 7.80 scan initiated Sun Oct  4 12:22:56 2020 as: /usr/bin/nmap -T4 -sV -n -sSU -O -p T:25,135,137,139,445,1433,3306,5432,U:137,161,162,1434 -oA /root/.local/share/legion/tmp/legion-bm29bd5p-running/nmap/20201004122255613860-nmapstage2 192.168.1.47
+Nmap scan report for 192.168.1.47
+Host is up (0.00078s latency).
+
+PORT     STATE  SERVICE      VERSION
+25/tcp   closed smtp
+135/tcp  closed msrpc
+137/tcp  closed netbios-ns
+139/tcp  closed netbios-ssn
+445/tcp  closed microsoft-ds
+1433/tcp closed ms-sql-s
+3306/tcp closed mysql
+5432/tcp closed postgresql
+137/udp  closed netbios-ns
+161/udp  closed snmp
+162/udp  closed snmptrap
+1434/udp closed ms-sql-m
+MAC Address: 08:00:27:37:54:C2 (Oracle VirtualBox virtual NIC)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Oct  4 12:22:59 2020 -- 1 IP address (1 host up) scanned in 2.50 seconds

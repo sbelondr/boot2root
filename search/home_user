@@ -1,0 +1,18 @@
+LOOKATME
+ft_root
+laurie
+laurie@borntosec.net
+lmezard
+thor
+zaz 
+
+
+LOOKATME:
+	- password
+		- cat: lmezard:G!@M6f4Eatau{sF"
+
+Not ssh
+
+work:
+ftp 192.168.1.47
+
