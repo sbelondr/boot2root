@@ -149,6 +149,7 @@ On arrive bien a se connecter en ssh avec laurie.
 
 # ssh
 
+## laurie
 user: `laurie`
 password: `330b845f32185747e4f8ca15d40ca59796035c89ea809fb5d30f4da83ecf45a4`
 
@@ -174,22 +175,13 @@ dans les phase il verifie dans un if que ce que rentre l'utilisateur correspond 
 
 Il nous suffit donc de lire cette variable avec: `x`
 
-phase_1: `Public speaking is very easy.`
-phase_2: ``
-phase_3: ``
-phase_4: ``
-phase_5: ``
-phase_6: ``
+
+Password: `Publicspeakingisveryeasy.126241207201b2149opekmq426135`
 
 
+## thor
 
-
-
-
-
-
-
-
-
+user: `thor`
+password: `Publicspeakingisveryeasy.126241207201b2149opekmq426135`
 
 

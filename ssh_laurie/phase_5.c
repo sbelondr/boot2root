@@ -19,7 +19,7 @@ int phase_5(char *param_1)
     return explode_bomb();
   }
   iVar1 = 0;
-  char *array123 = "isrveawhobpnutfg\260\001";
+  char *array123 = "isrveawhobpnutfg";
   do {
 // local_c[iVar1] = (&array.123)[(char)(*(byte *)(iVar1 + param_1) & 0xf)];
 // array.123 -> 0x804b220 -> 0x804b220:	"isrveawhobpnutfg\260\001"
@@ -43,13 +43,20 @@ int	rv_phase_5(void)
 	char *giants = "giants";
 	while (i < 6)
 	{
-		char *array123 = "isrveawhobpnutfg\260\001";
+		char *array123 = "isrveawhobpnutfg";
 		int	j = 'a';
-		while (array123[j & 0xf] != giants[i])
+//		while (array123[j & 0xf] != giants[i])
+//			++j;
+		while (j <= 'z')
+		{
+			if (array123[j & 0xf] == giants[i])
+				printf("%c - ", j);
 			++j;
-		printf("%c\n", j);
+		}
+		printf("\n");
 		++i;
 	}
+	return (0);
 }
 
 int	main(int ac, char **av)
