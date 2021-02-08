@@ -11,8 +11,9 @@
 # **************************************************************************** #
 
 from enum import Enum
-import cv2
-import numpy as np
+#import numpy as np
+import turtle# import *
+#from random import randint
 
 class Way(Enum):
     AVANCE = 0
@@ -36,62 +37,45 @@ def parse(data):
         return Way.RECULE, int(data[1])
     return Way.EMPTY, 0
 
-def lexer(data, pas, direction):
-    if data[0] == Way.AVANCE:
-        pas += data[1]
-    if data[0] == Way.RECULE:
-        pas -= data[1]
-    if data[0] == Way.LEFT:
-        direction -= data[1]
-    if data[0] == Way.RIGHT:
-        direction += data[1]
-    if direction >= 360:
-        direction -= 360
-    return pas, direction
+def turtle_print(turtle_bis):
+    turtle.penup()
+    turtle.goto(0, 0)
+    turtle.setheading(45)
+    turtle.pendown()
+    turtle.speed(0)
 
-def draw(image, x, y, pas, direction):
-    # Create a named colour
-    red = [0,0,255]
-    # Change one pixel
-    if direction == 90:
-        x += 1
-        direction -= 90
-    elif direction == -90:
-        x-= 1
-        direction += 90
-    if pas > 0:
-        y += pas
-    else:
-        y -= pas
-    image[x,y]=red
-    return image, x, y
+    for data in turtle_bis: 
+        rgb_r = 255
+        rgb_g = 0
+        rgb_b = 0
+        angle = 0
+        nbpas = 0 
 
-def init_img():
-    w=4000
-    h=4000
-    # Make empty black image
-    image=np.zeros((h,w,3),np.uint8)
-    return image
+        if data[0] == Way.AVANCE:
+            nbpas += data[1]
+        if data[0] == Way.RECULE:
+            nbpas -= data[1]
+        if data[0] == Way.LEFT:
+            angle -= data[1]
+        if data[0] == Way.RIGHT:
+            angle += data[1]
+        turtle.color("blue")
+        turtle.left(angle)
+        turtle.forward(nbpas)
+    turtle.done()
 
-def print_img(image):
-    # Save
-    cv2.imwrite("result.png",image)
 
 def main():
     pas = 0
     direction = 0
-    image = init_img()
-    x,y = 1000, 1000
+    result = list()
     while (1):
         data = file.readline()
         if (data == ""):
             break
-        result = parse(data)
-        pas, direction = lexer(result, pas, direction)
-        if x > 3000 or y > 3000:
-            break
-        image, x, y = draw(image, x, y,pas, direction)
-    print_img(image)
+        result.append(parse(data))
+#        pas, direction = lexer(result, pas, direction)
+    turtle_print(result)
 #    print("Pas: " + str(pas) + ", direction: " + str(direction))
 
 

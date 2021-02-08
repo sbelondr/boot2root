@@ -184,4 +184,17 @@ Password: `Publicspeakingisveryeasy.126241207201b2149opekmq426135`
 user: `thor`
 password: `Publicspeakingisveryeasy.126241207201b2149opekmq426135`
 
+turtle -> SLASH
+
+MD5 -> 646da671ca01bb5d84dbb5fb2238dc8e
+
+
+# zaz
+
+user: `zaz`
+password: `646da671ca01bb5d84dbb5fb2238dc8e`
+
+
+
+
 
