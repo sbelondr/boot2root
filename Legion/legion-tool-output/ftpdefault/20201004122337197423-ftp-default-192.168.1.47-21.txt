@@ -1,1 +1,0 @@
-# Hydra v9.1 run at 2020-10-04 12:23:37 on 192.168.1.47 ftp (/usr/bin/hydra -s 21 -C ./wordlists/ftp-betterdefaultpasslist.txt -u -o /root/.local/share/legion/tmp/legion-bm29bd5p-running/ftpdefault/20201004122337197423-ftp-default-192.168.1.47-21.txt -f 192.168.1.47 ftp)
