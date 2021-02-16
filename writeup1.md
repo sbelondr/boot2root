@@ -243,3 +243,5 @@ id
 cd /root
 cat README
 ```
+
+Tu as les droits root !
